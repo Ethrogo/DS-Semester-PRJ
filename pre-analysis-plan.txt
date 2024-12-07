@@ -1,0 +1,31 @@
+An observation in this study is an NBA game,represented by the data associated 
+with the two teams playing in that game
+
+This is a supervised learning problem, specifically a regression task. 
+The target variable is the point spread: the predicted difference in score 
+between the home and away team.
+
+Target (y): Spread (home_points - away_points).
+Predictors (X): A combination of team-level stats, player contributions, 
+and game-specific variables.
+
+The analysis will start with linear regression as a baseline model to 
+establish interpretable relationships between features and the spread. 
+Linear regression will help identify initial trends and highlight key 
+predictors in a straightforward way. Following this, random forest 
+regression will be used to account for non-linear relationships and
+feature interactions that linear models may miss. To further refine
+predictions, gradient boosting methods like XGBoost will be applied
+to iteratively minimize residual errors by building upon previous
+ predictions.
+
+Feature engineering will be critical for extracting meaningful predictors 
+from the raw data. To capture recent team performance, rolling averages 
+will be calculated for key metrics like points scored, rebounds, and 
+shooting percentages over the last 5 games. Aggregation techniques will 
+summarize player-level data into team-level metrics for each game, ensuring 
+a balance between granularity and interpretability. Categorical features 
+like team names and home/away status will be one-hot encoded to incorporate 
+these variables into the models. To handle the high-dimensional nature of 
+the dataset, feature selection techniques like LASSO or dimensionality 
+reduction using PCA will be applied.
